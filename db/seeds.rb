@@ -7,3 +7,12 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+require 'faker'
+
+50.times do
+  title = Faker::Movie.title
+  movie = Movie.new(title: title, overview: Faker::Movie.quote,
+            poster_url: "https://source.unsplash.com/random/?#{title}")
+  movie.save
+end
