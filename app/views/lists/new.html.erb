@@ -1,2 +1,9 @@
-<h1>Lists#new</h1>
-<p>Find me in app/views/lists/new.html.erb</p>
+<div class="container">
+  <h1>Create a new List</h1>
+
+  <%= simple_form_for(@list) do |f| %>
+    <%= f.input :name %>
+    <%= f.button :submit, class: "btn btn-info" %>
+  <% end %>
+
+</div>
